@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane style="-fx-background-color: #616161;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateNewMapController">
+   <children>
+      <VBox spacing="5.0">
+         <children>
+            <HBox spacing="5.0">
+               <children>
+                  <Region prefHeight="34.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Label text="New Map Data" textFill="#ffccff">
+                     <font>
+                        <Font name="Gabriola" size="28.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="34.0" prefWidth="13.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox spacing="5.0">
+               <children>
+                  <Label text="Title" textFill="#ffccff">
+                     <font>
+                        <Font name="Gabriola" size="18.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="25.0" prefWidth="7.0" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="titleField" prefHeight="25.0" prefWidth="175.0" promptText="New Map Tile" />
+               </children>
+            </HBox>
+            <HBox spacing="5.0">
+               <children>
+                  <Label text="Number of Rows" textFill="#ffccff">
+                     <font>
+                        <Font name="Gabriola" size="18.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="25.0" prefWidth="7.0" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="rowField" prefHeight="25.0" prefWidth="102.0" promptText="Natural Number" />
+               </children>
+            </HBox>
+            <HBox spacing="5.0">
+               <children>
+                  <Label text="Number of Columns" textFill="#ffccff">
+                     <font>
+                        <Font name="Gabriola" size="18.0" />
+                     </font></Label>
+                  <TextField fx:id="columnField" prefHeight="25.0" prefWidth="102.0" promptText="Natural Number" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Region prefHeight="25.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelMap" style="-fx-background-color: #444444;" text="Cancel" textFill="#ffccff">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Region prefHeight="25.0" prefWidth="27.0" />
+                  <Button mnemonicParsing="false" onAction="#handleCreateMap" style="-fx-background-color: #444444;" text="Create" textFill="#ffccff">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Region prefHeight="25.0" prefWidth="49.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</Pane>

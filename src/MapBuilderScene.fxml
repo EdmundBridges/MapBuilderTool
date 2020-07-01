@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MapBuilderSceneController">
+   <center>
+      <BorderPane style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <top>
+            <HBox minWidth="100.0" prefWidth="100.0" spacing="5.0" style="-fx-background-color: #666666; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+               <children>
+                  <Region prefWidth="20.0" />
+                  <VBox fx:id="selection" onMouseClicked="#handleSelectionMouseClicked" spacing="5.0" style="-fx-border-color: #666666;">
+                     <children>
+                        <Pane maxHeight="35.0" maxWidth="33.0" minHeight="35.0" minWidth="33.0" prefHeight="35.0" prefWidth="33.0">
+                           <children>
+                              <Line endX="10.0" fill="#1100ff" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endX="10.0" fill="#1100ff" layoutX="20.0" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endY="10.0" fill="#1100ff" layoutX="30.0" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endY="10.0" fill="#1100ff" layoutX="30.0" layoutY="20.0" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endX="-10.0" fill="#1100ff" layoutX="30.0" layoutY="30.0" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endX="-10.0" fill="#1100ff" layoutX="10.0" layoutY="30.0" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endY="-10.0" fill="#1100ff" layoutY="30.0" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endY="-10.0" fill="#1100ff" layoutY="10.0" stroke="#1100ff" strokeWidth="3.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="6.0" right="5.0" />
+                           </VBox.margin>
+                        </Pane>
+                        <Label text="Select" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Bold" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="15.0" left="5.0" right="5.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <Region prefHeight="52.0" prefWidth="29.0" />
+                  <HBox fx:id="pallet" onMouseClicked="#handlePalletMouseClicked" spacing="5.0" style="-fx-border-color: #1100ff;">
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Group fx:id="selectionTile1">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="PALEGREEN" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+                                    <Label layoutX="7.0" layoutY="7.0" text="`````" textFill="WHITE" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Group>
+                              <Label text="Color 1" textFill="WHITE">
+                                 <font>
+                                    <Font name="SansSerif Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <Region prefHeight="65.0" prefWidth="5.0" />
+                        <VBox spacing="5.0">
+                           <children>
+                              <Group fx:id="selectionTile2">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+                                    <Label layoutX="5.0" layoutY="5.0" textFill="WHITE" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Group>
+                              <Label text="Color 2" textFill="WHITE">
+                                 <font>
+                                    <Font name="SansSerif Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <Region prefHeight="65.0" prefWidth="5.0" />
+                        <GridPane hgap="5.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="98.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="NEVER" />
+                            <ColumnConstraints hgrow="NEVER" />
+                              <ColumnConstraints hgrow="NEVER" />
+                              <ColumnConstraints hgrow="NEVER" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Group fx:id="tile1" onMouseClicked="#handleTileClicked">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                                    <Label layoutX="5.0" layoutY="5.0" textFill="WHITE">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group fx:id="tile2" onMouseClicked="#handleTileClicked" GridPane.columnIndex="1">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="PALEGREEN" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                                    <Label layoutX="5.0" layoutY="5.0" text="`````" textFill="WHITE">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group fx:id="tile3" onMouseClicked="#handleTileClicked" GridPane.columnIndex="2">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DARKGREEN" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                                    <Label layoutX="5.0" layoutY="5.0" text="T" textFill="WHITE">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group fx:id="tile4" onMouseClicked="#handleTileClicked" GridPane.columnIndex="3">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79695f" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                                    <Label layoutX="5.0" layoutY="5.0" text="^^" textFill="WHITE">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group fx:id="tile5" onMouseClicked="#handleTileClicked" GridPane.rowIndex="1">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544040" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                                    <Label layoutX="5.0" layoutY="5.0" text="/|\" textFill="WHITE">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group fx:id="tile6" onMouseClicked="#handleTileClicked" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="AQUA" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                                    <Label layoutX="5.0" layoutY="5.0" text="~~" textFill="WHITE">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group fx:id="tile7" onMouseClicked="#handleTileClicked" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREY" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                                    <Label layoutX="5.0" layoutY="5.0" text="[  ]" textFill="WHITE">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group fx:id="tile8" onMouseClicked="#handleTileClicked" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SLATEGRAY" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                                    <Label layoutX="5.0" layoutY="5.0" text="|-|-|" textFill="WHITE">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="8.0" />
+                     </padding>
+                  </HBox>
+                  <Pane onMouseDragged="#handleMapMouseDragged" onMousePressed="#handleMapMousePressed" onMouseReleased="#handleMapMouseReleased" style="-fx-background-color: #000000;" visible="false">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Group fx:id="bottomLeft" layoutX="1.5" layoutY="28.5" visible="false">
+                           <children>
+                              <Line endX="10.0" fill="#1100ff" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endY="-10.0" fill="#1100ff" stroke="#1100ff" strokeWidth="3.0" />
+                           </children>
+                        </Group>
+                        <Group fx:id="topLeft" layoutX="1.5" layoutY="1.5" visible="false">
+                           <children>
+                              <Line endX="10.0" fill="#1100ff" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endY="10.0" fill="#1100ff" stroke="#1100ff" strokeWidth="3.0" />
+                           </children>
+                        </Group>
+                        <Group fx:id="topRight" layoutX="28.5" layoutY="1.5" visible="false">
+                           <children>
+                              <Line endY="10.0" fill="#1100ff" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endX="-10.0" fill="#1100ff" stroke="#1100ff" strokeWidth="3.0" />
+                           </children>
+                        </Group>
+                        <Group fx:id="bottomRight" layoutX="28.5" layoutY="28.5" visible="false">
+                           <children>
+                              <Line endY="-10.0" fill="#1100ff" stroke="#1100ff" strokeWidth="3.0" />
+                              <Line endX="-10.0" fill="#1100ff" stroke="#1100ff" strokeWidth="3.0" />
+                           </children>
+                        </Group>
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <left>
+            <TreeView fx:id="treeView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <TabPane fx:id="mapTabs" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </center>
+   <top>
+      <MenuBar style="-fx-background-color: #ffeeff;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleNewFile" text="New...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleOpenFile" text="Open...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveFile" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveFileAs" text="Save As...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem fx:id="undo" mnemonicParsing="false" onAction="#handleUndo" text="Undo">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="redo" mnemonicParsing="false" onAction="#handleRedo" text="Redo">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Y" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="cut" disable="true" mnemonicParsing="false" onAction="#handleCut" text="Cut">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="copy" disable="true" mnemonicParsing="false" onAction="#handleCopy" text="Copy">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="paste" disable="true" mnemonicParsing="false" onAction="#handlePaste" text="Paste">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="delete" disable="true" mnemonicParsing="false" onAction="#handleDelete" text="Delete">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Insert">
+            <items>
+                  <MenuItem fx:id="insertRows" disable="true" mnemonicParsing="false" onAction="#handleInsertRows" text="Insert Rows" />
+                  <MenuItem fx:id="insertColumns" disable="true" mnemonicParsing="false" onAction="#handleInsertColumns" text="Insert Columns" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
